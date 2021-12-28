@@ -1,0 +1,469 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', 'sans-serif';
+}
+
+body {
+    background: #f0f2f5;
+    overflow: hidden;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    width: 100%;
+    display: flex;
+}
+
+/* HEADER */
+.cabecalho {
+    background-color: #1877f2;
+    width: 100%;
+    height: 70px;
+}
+
+.cabecalho .barra-topo {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 10px 10px 20px;
+    line-height: 50px;
+}
+.cabecalho .barra-topo a {
+    color: #FFF;
+}
+
+.cabecalho .barra-topo .log-gmail {
+    width: 200px;
+    border: 2px solid #FFF;
+    text-align: center;
+    font-weight: 700;
+    border-radius: 30px;
+    transition: 0.5s;
+
+}
+
+.cabecalho .barra-topo .log-gmail:hover {
+    background-color: #FFF;
+    color: #1877f2;
+}
+
+/* LOGINS RECENTES */
+.titles {
+    flex-basis: 50%;
+    margin: 80px 0 100px 200px;
+}
+.titles h2:nth-child(1) {
+    color: #1877f2;
+    margin-bottom: 10px;
+    font-size: 30px;
+    font-weight: 900;
+}
+
+.titles h2:nth-child(2) {
+    font-weight: 500;
+}
+
+.titles span {
+    color: #737677;
+}
+
+.login {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.photo {
+    margin: 20px 20px 0 0;
+    width: 150px;
+    height: 190px;
+    border-radius: 5px;
+    background-color: #FFF;
+    transition: 0.5s;
+}
+
+.photo:hover {
+    box-shadow: 5px 5px 20px #666;
+}
+
+.hide {
+    display: none;
+}
+
+.photo i {
+    position: fixed;
+    color: #FFF;
+    margin: 5px;
+}
+
+.photo i:hover {
+    color: #1877f2;
+    font-size: 20px;
+    transition: 0.5s;
+}
+
+.photo img {
+    width: 100%;
+    height: 80%;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+figcaption {
+    text-align: center;
+    color: #000;
+}
+
+.add-conta {
+    margin-top: 20px;
+    width: 150px;
+    height: 190px;
+    border-radius: 5px;
+    background-color: #FFF;
+    transition: 0.5s;
+}
+
+.add-conta:hover {
+    box-shadow: 5px 5px 20px #666;
+}
+
+.add-conta i {
+    width: 100%;
+    height: 80%;
+    font-size: 35px;
+    background-color: #d6dde2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #1877f2;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.add-conta .span-add {
+    text-align: center;
+    color: #1877f2;
+    line-height: 35px;
+}
+
+/* POPUP */
+#popup {
+    position: fixed;
+    top: -100%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 1;
+    background: #fff;
+    width: 400px;
+    height: 495px;
+    padding: 50px 20px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+    transition: 0.5s;
+    visibility: hidden;
+}
+
+#popup.active {
+    visibility: visible;
+    top: 50%;
+}
+
+#popup .content {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#popup .content img {
+    width: 162px;
+    height: 162px;
+    border-radius: 50%;
+}
+
+#popup .content .inputBox {
+    position: relative;
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#popup .content #checkbox {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+#popup .content #checkbox .lbl-check {
+    margin-left: 20px;
+}
+
+#popup .content .inputBox input[type="checkbox"] {
+    width: 10px;
+}
+
+#popup .content .inputBox input {
+    width: 100%;
+    border: 1px solid rgba(0,0,0,0.2);
+    padding: 15px;
+    outline: none;
+    font-size: 18px;
+    border-radius: 5px;
+}
+
+#popup .content .inputBox input:focus {
+    border-color: #1877f2;
+}
+
+#popup .content .inputBox input[type="submit"] {
+    width: 100%;
+    background: #1877f2;
+    color: #FFF;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 10px;
+    transition: 0.5s;
+}
+
+#popup .content .inputBox input[type="submit"]:hover {
+    background: #0b62d4;
+    letter-spacing: 2px;
+}
+
+#popup .content .forgot-key {
+    margin-top: 20px;
+}
+
+#popup .content .forgot-key a {
+    color: #1877f2;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+/* POPUP ADD ACCOUNT */
+#popup-add {
+    position: fixed;
+    top: -100%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 1;
+    background: #fff;
+    width: 400px;
+    height: 410px;
+    padding: 50px 20px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+    transition: 0.5s;
+    visibility: hidden;
+}
+
+#popup-add.active {
+    visibility: visible;
+    top: 50%;
+}
+
+#popup-add .content {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#popup-add .content .title {
+    margin-bottom: 10px;
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid rgb(168, 168, 168);
+}
+
+#popup-add .content .inputBox {
+    position: relative;
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#popup-add .content #checkbox {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+#popup-add .content #checkbox .lbl-check {
+    margin-left: 20px;
+}
+
+#popup-add .content .inputBox input[type="checkbox"] {
+    width: 10px;
+}
+
+#popup-add .content .inputBox input {
+    width: 100%;
+    border: 1px solid rgba(0,0,0,0.2);
+    padding: 15px;
+    outline: none;
+    font-size: 18px;
+    border-radius: 5px;
+}
+
+#popup-add .content .inputBox input:focus {
+    border-color: #1877f2;
+}
+
+#popup-add .content .inputBox input[type="submit"] {
+    width: 100%;
+    background: #1877f2;
+    color: #FFF;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 10px;
+    transition: 0.5s;
+}
+
+#popup-add .content .inputBox input[type="submit"]:hover {
+    background: #0b62d4;
+    letter-spacing: 2px;
+}
+
+#popup-add .content .forgot-key {
+    margin-top: 20px;
+}
+
+#popup-add .content .forgot-key a {
+    color: #1877f2;
+}
+
+.closeAdd {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+/* FORMULARIO DO LOGIN */ 
+
+.login-form {
+    flex-basis: 50%;
+    margin: 80px 100px;
+    padding: 40px;
+    width: 100%;
+    height: 420px;
+    background: #FFF;
+}
+
+.login-form h2 {
+    font-size: 30px;
+    color: #333;
+    font-weight: 500;
+    text-align: center;
+}
+
+.login-form .inputBox {
+    position: relative;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.login-form .inputBox input {
+    width: 100%;
+    padding: 5px 0;
+    font-size: 16px;
+    margin: 10px 0;
+    border: none;
+    border-bottom: 1px solid #000;
+    outline: none;
+}
+
+.login-form .inputBox span {
+    position: absolute;
+    left: 0;
+    padding: 5px 0;
+    font-size: 16px;
+    margin: 10px 0;
+    pointer-events: none;
+    transition: 0.5s;
+    color: #666;
+}
+
+.login-form .inputBox input:focus ~ span,
+.login-form .inputBox input:valid ~ span {
+    color: #1877f2;
+    font-size: 12px;
+    transform: translateY(-20px);
+}
+
+.login-form .inputBox input[type="submit"] {
+    width: 100%;
+    background: #1877f2;
+    color: #FFF;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 10px;
+    transition: 0.5s;
+}
+
+.login-form .inputBox input[type="submit"]:hover {
+    background: #0b62d4;
+    letter-spacing: 2px;
+}
+
+.login-form .forgot-key {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid rgb(168, 168, 168);
+}
+
+.login-form .forgot-key a {
+    color: #1877f2;
+    font-size: 13px;
+    margin-bottom: 20px;
+}
+
+.login-form .forgot-key a:hover {
+    text-decoration: underline;
+}
+
+.login-form .new-account {
+    display: flex;
+    margin-top: 30px;
+    background-color: #42b72a;
+    color: #FFF;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 10px;
+    justify-content: center;
+    transition: 0.5s;
+}
+
+.login-form .new-account:hover {
+    background-color: #278d13;
+    letter-spacing: 2px;
+}
